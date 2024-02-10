@@ -1,0 +1,29 @@
+nav {
+  background-color: rgb(1, 11, 8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top:0;
+  left:0;
+  color: aliceblue;
+  width:100%;
+  background-color: rgb(1, 11, 8);
+}
+.nav-links{
+  display: flex;
+  list-style-type: none;
+  margin:0;
+  padding:0 50px;
+}
+.nav-links li{
+  margin-left: 10px;
+}
+.logo {
+  font-weight:bold;
+}
+.nav-link{
+  color: dodgerblue;
+  font-family: 'Cormorant Garamond', serif;
+}
