@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import AnimalCard from '../AnimalCard/AnimalCard'
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrfectmatch/` // Subject to change (maybe)
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/animals/` // Subject to change (maybe)
 
 const AnimalList = () => {
   const [ animals, setAnimals] = useState([])  // State to store all animals
@@ -13,7 +13,7 @@ const AnimalList = () => {
 
   useEffect(() => {
     // used to fetch animals from the backend, backend route needs to be placed 
-    axios.get(`${BASE_URL}/`) // subject to change to fetch (maybe)
+    axios.get(`${BASE_URL}`) // subject to change to fetch (maybe)
     .then(response => {
       setAnimals(response.data) // set animals state with data from response 
       setFilteredAnimals(response.data) //  Set filteredAnimals state with data from the response initially

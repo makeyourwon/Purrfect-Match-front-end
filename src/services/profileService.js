@@ -1,13 +1,13 @@
 //import * as tokenService from './tokenService'
 
 //set base url for api 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrfectmatch` // subject to change
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/user/profile/` // subject to change
 
 
 async function getProfile() {
   try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`${BASE_URL}/profileroute`, {
+        const res = await fetch(`${BASE_URL}`, {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}`,
                        'Content-Type': 'application/json' }
@@ -26,7 +26,7 @@ async function getProfile() {
 async function updateProfile(profileData) {
   try {
     const token = localStorage.getItem('token');
-    const res = await fetch(`${BASE_URL}/profileroute`, {
+    const res = await fetch(`${BASE_URL}update/`, {
       method: 'PUT', 
       headers: { 
         'Authorization': `Bearer ${token}`,
