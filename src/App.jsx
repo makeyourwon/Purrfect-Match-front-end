@@ -6,8 +6,11 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage'
+import AnimalPage from './pages/AnimalPage/AnimalPage'
 
 import * as authService from './services/authService'
+
 
 const App = () => {
   const navigate = useNavigate()
@@ -37,12 +40,29 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route 
-          path="/profiles"
+          path="/profile"
           element={
           <ProtectedRoute user={user}>
             <Profiles />
           </ProtectedRoute>
+          
           }
+        />
+        <Route
+        path="/favorites"
+        element={
+        <ProtectedRoute user={user}>
+          <FavoritesPage />
+        </ProtectedRoute>
+        }
+        />
+        <Route
+        path="/listings" 
+        element={
+        <ProtectedRoute user={user}>
+          <AnimalPage />
+        </ProtectedRoute>
+        } 
         />
       </Routes>
     </>
@@ -50,6 +70,3 @@ const App = () => {
 }
 
 export default App
-
-//////////////////////// Route below is for the animal listings //////////////////////////////////
-// <Route path="/listings" element={<AnimalPage />} />

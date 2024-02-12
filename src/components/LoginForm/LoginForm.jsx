@@ -4,24 +4,26 @@ import styles from './LoginForm.module.css'
 
 import * as authService from '../../services/authService'
 
-const LoginForm = props => {
+const LoginForm = (props) => {
+  console.log(props)
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    email: '',
-    pw: '',
+    username: '',
+    password: '',
   })
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     props.updateMessage('')
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       await authService.login(formData)
+      console.log(formData)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/profile')
     } catch (err) {
       props.updateMessage(err.message)
     }
@@ -34,13 +36,13 @@ const LoginForm = props => {
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+        <label htmlFor="username" className={styles.label}>Username</label>
         <input
           type="text"
           autoComplete="off"
-          id="email"
-          value={formData.email}
-          name="email"
+          id="username"
+          value={formData.username}
+          name="username"
           onChange={handleChange}
         />
       </div>
@@ -50,8 +52,8 @@ const LoginForm = props => {
           type="password"
           autoComplete="off"
           id="password"
-          value={formData.pw}
-          name="pw"
+          value={formData.password}
+          name="password"
           onChange={handleChange}
         />
       </div>

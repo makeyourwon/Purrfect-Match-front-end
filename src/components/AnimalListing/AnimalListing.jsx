@@ -1,5 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, applyFilters} from 'react'
 import AnimalCard from '../AnimalCard/AnimalCard'
+import axios from 'axios'
+
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/animals/` // Subject to change (maybe)
 
 const AnimalList = () => {
   const [ animals, setAnimals] = useState([])  // State to store all animals
@@ -7,10 +10,11 @@ const AnimalList = () => {
   const [currentPage, setCurrentPage ] = useState(1) // for current page #
   const [animalsPerPage] = useState(8) // # of animals displayed on screen at one time
   const [filters, setFilters] = useState({}) // state for filters 
+  
 
   useEffect(() => {
     // used to fetch animals from the backend, backend route needs to be placed 
-    axios.get('BACKEND ROUTE TO BE TESTED')
+    axios.get(`${BASE_URL}`) // subject to change to fetch (maybe)
     .then(response => {
       setAnimals(response.data) // set animals state with data from response 
       setFilteredAnimals(response.data) //  Set filteredAnimals state with data from the response initially
@@ -47,8 +51,10 @@ const AnimalList = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber) // this is used ti change the filter page number 
 //Work in progress ///////////////////////////////////////////////////
   return (
-    <FilterBar onFilterChange={handleFilterChange}/>
-
+    // <FilterBar onFilterChange={handleFilterChange}/>
+    <div> hi
+      <AnimalCard />
+    </div>
   )
 }
 

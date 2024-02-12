@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link} from 'react-router-dom'
 import './NavBar.css'
 
 
@@ -9,10 +9,10 @@ const NavBar = ({ user, handleLogout }) => {
       <ul className="nav-links">
         {user ? (
           <>
-          <li>Welcome, {user.name}</li>
-          <li><NavLink className="nav-link" to="/profile">In the works</NavLink></li>
-          <li><NavLink className="nav-link" to="/home"></NavLink>Home?</li>
-          <li><NavLink className="nav-link" to="/favorites">Favs</NavLink></li>
+          <li>Welcome, {user.username}</li>
+          <li><NavLink className="nav-link" to="/profile">My Profile</NavLink></li>
+          <li><NavLink className="nav-link" to="/home"></NavLink>Home</li>
+          <li><NavLink className="nav-link" to="/favorites">Favorites</NavLink></li>
           <li><NavLink className="nav-link" to="/listings">Availible Pets</NavLink></li>
           <li><NavLink className="nav-link" to="" onClick={handleLogout}>Log out</NavLink></li>
           </>
@@ -26,27 +26,5 @@ const NavBar = ({ user, handleLogout }) => {
     </nav>
   )
 }
-//     <>
-//       {user ?
-//         <nav>
-//           <ul>
-//             <li>Welcome, {user.name}</li>
-//             <li><Link to="/profiles">Profiles</Link></li>
-//             <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-//           </ul>
-//         </nav>
-//       :
-//         <nav>
-//           <ul>
-//             <li className="appName">PurrfectMatch</li>
-//             <li><Link to="/login">Log In</Link></li>
-//             <li><Link to="/signup">Sign Up</Link></li>
-//             <li><Link to="/profiles">Profiles</Link></li>
-//           </ul>
-//         </nav>
-//       }
-//     </>
-//   )
-// }
 
 export default NavBar
