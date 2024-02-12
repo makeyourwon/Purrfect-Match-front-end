@@ -50,3 +50,6 @@ const App = () => {
 }
 
 export default App
+
+//////////////////////// Route below is for the animal listings //////////////////////////////////
+// <Route path="/listings" element={<AnimalPage />} />
