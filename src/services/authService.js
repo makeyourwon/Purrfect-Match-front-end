@@ -1,7 +1,7 @@
 //import tokenservice
 import * as tokenService from './tokenService'
 //set the base url to the env variable
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/user/` // Subject to change
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/` // Subject to change
 // retrive user data from token 
 function getUser() {
   return tokenService.getUserFromToken()
@@ -38,8 +38,9 @@ async function login(credentials) {
       body: JSON.stringify(credentials),
     })
     const json = await res.json()
-    if (json.token) {
-      tokenService.setToken(json.token)
+    console.log(res) 
+    if (json.access) {
+      tokenService.setToken(json.access)
     }
     if (json.err) {
       throw new Error(json.err)

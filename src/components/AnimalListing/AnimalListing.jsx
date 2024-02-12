@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, applyFilters} from 'react'
 import AnimalCard from '../AnimalCard/AnimalCard'
+import axios from 'axios'
 
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/animals/` // Subject to change (maybe)
 
@@ -50,8 +51,10 @@ const AnimalList = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber) // this is used ti change the filter page number 
 //Work in progress ///////////////////////////////////////////////////
   return (
-    <FilterBar onFilterChange={handleFilterChange}/>
-
+    // <FilterBar onFilterChange={handleFilterChange}/>
+    <div> hi
+      <AnimalCard />
+    </div>
   )
 }
 

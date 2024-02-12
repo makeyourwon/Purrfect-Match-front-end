@@ -6,7 +6,7 @@ import * as authService from '../../services/authService'
 const SignupForm = props => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     passwordConf: '',
@@ -31,10 +31,10 @@ const SignupForm = props => {
     }
   }
 
-  const { name, email, password, passwordConf } = formData
+  const { username, email, password, passwordConf } = formData
 
   const isFormInvalid = () => {
-    return !(name && email && password && password === passwordConf)
+    return !(username && email && password && password === passwordConf)
   }
 
   return (
@@ -44,13 +44,13 @@ const SignupForm = props => {
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+        <label htmlFor="username" className={styles.label}>Username</label>
         <input
           type="text"
           autoComplete="off"
-          id="name"
-          value={name}
-          name="name"
+          id="username"
+          value={username}
+          name="username"
           onChange={handleChange}
         />
       </div>

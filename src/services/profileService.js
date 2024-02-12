@@ -1,7 +1,7 @@
 //import * as tokenService from './tokenService'
 
 //set base url for api 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/user/profile/` // subject to change
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/profile/` // subject to change
 
 
 async function getProfile() {
