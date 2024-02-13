@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
 import * as profileService from '../../services/profileService';
-
+import './Profile.css'
 const Profile = ({ handleLogout }) => {
   const [profile, setProfile] = useState({
-    username: '',
-    email: '',
-    password: '',
     name: '',
     age: '',
     location: '',
@@ -17,9 +14,9 @@ const Profile = ({ handleLogout }) => {
       const profileData = await profileService.getProfile();
       setProfile(profileData);
     };
-    fetchProfile();
+    fetchProfile(); 
   }, []);
-
+console.log(profile)
   if (!profile) return <div>Loading profile...</div>;
 
   const handleChange = (event, parameter) => {
@@ -33,25 +30,16 @@ const Profile = ({ handleLogout }) => {
   };
 
   return (
+    <>
+    <div>
+      <h1> My Profile </h1>
+    </div>
+    <div className='profile-info'>
+      <h1>{profile.name}</h1>
+      <h2>Age:{profile.age}</h2>
+    </div>
+    <div className='update-form'>
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={profile.username}
-        onChange={(event) => handleChange(event, 'username')}
-        placeholder="Username"
-      />
-      <input
-        type="email"
-        value={profile.email}
-        onChange={(event) => handleChange(event, 'email')}
-        placeholder="Email Address"
-      />
-      <input
-        type="password"
-        value={profile.password}
-        onChange={(event) => handleChange(event, 'password')}
-        placeholder="Password"
-      />
       <input
         type="text"
         value={profile.name}
@@ -78,6 +66,8 @@ const Profile = ({ handleLogout }) => {
       />
       <button type="submit" onClick={handleSubmit}>Update Profile</button>
     </form>
+    </div>
+    </>
   );
 };
 

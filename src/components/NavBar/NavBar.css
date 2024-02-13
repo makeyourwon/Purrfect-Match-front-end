@@ -10,6 +10,7 @@ nav {
   color: aliceblue;
   width:100%;
   background-color: rgb(1, 11, 8);
+  z-index: 1000;
 }
 .nav-links{
   display: flex;
@@ -26,4 +27,7 @@ nav {
 .nav-link{
   color: dodgerblue;
   font-family: 'Cormorant Garamond', serif;
+}
+body {
+  padding-top: 80px; /* Adjust this value according to your navigation bar height */
 }
