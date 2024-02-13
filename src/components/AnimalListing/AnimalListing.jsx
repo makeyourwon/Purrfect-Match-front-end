@@ -1,8 +1,8 @@
 import React, {useState, useEffect, applyFilters} from 'react'
 import AnimalCard from '../AnimalCard/AnimalCard'
-import axios from 'axios'
+import animalService from '../../services/animalService'
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/purrmatch/animals/` // Subject to change (maybe)
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/animals/` // Subject to change (maybe)
 
 const AnimalList = () => {
   const [ animals, setAnimals] = useState([])  // State to store all animals
@@ -13,16 +13,27 @@ const AnimalList = () => {
   
 
   useEffect(() => {
-    // used to fetch animals from the backend, backend route needs to be placed 
-    axios.get(`${BASE_URL}`) // subject to change to fetch (maybe)
-    .then(response => {
-      setAnimals(response.data) // set animals state with data from response 
-      setFilteredAnimals(response.data) //  Set filteredAnimals state with data from the response initially
-    })
-    .catch(error => {
-      console.error('error fetching animals', error)
-    }) 
-  }, [])
+  //   // used to fetch animals from the backend, backend route needs to be placed 
+  //   axios.get(`${BASE_URL}`) // subject to change to fetch (maybe)
+  //   .then(response => {
+  //     setAnimals(response.data) // set animals state with data from response 
+  //     setFilteredAnimals(response.data) //  Set filteredAnimals state with data from the response initially
+  //   })
+  //   .catch(error => {
+  //     console.error('error fetching animals', error)
+  //   }) 
+  // }, [])
+  const fetchAnimals = async () => {
+      try {
+        const data = await animalService.getAnimals();
+        setAnimals(data);
+        setFilteredAnimals(data);
+      } catch (error) {
+        console.error('Error fetching animals:', error);
+      }
+    };
+    fetchAnimals();
+  }, []);
 
   useEffect(() => {
     //effect to apply filters 
