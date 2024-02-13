@@ -52,9 +52,20 @@ const AnimalList = () => {
 //Work in progress ///////////////////////////////////////////////////
   return (
     // <FilterBar onFilterChange={handleFilterChange}/>
-    <div> hi
-      <AnimalCard />
-    </div>
+    // <div> hi
+    //   <AnimalCard />
+    // </div>
+
+    <div className="animal-list">
+    {currentAnimals.map((animal) => (
+      <AnimalCard
+        key={animal.id}
+        animal={animal}
+      />
+    ))}
+  </div>
+
+
   )
 }
 
