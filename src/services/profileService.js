@@ -26,7 +26,7 @@ async function getProfile() {
 async function updateProfile(profileData) {
   try {
     const token = localStorage.getItem('token');
-    const res = await fetch(`${BASE_URL}update/`, {
+    const res = await fetch(`${BASE_URL}`, {
       method: 'PUT', 
       headers: { 
         'Authorization': `Bearer ${token}`,
