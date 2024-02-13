@@ -39,4 +39,19 @@ async function getAnimals(filters = {}) {
     }
 }
 
-export default { getAnimals }
+async function getAnimalById(id) {
+    const token = localStorage.getItem('token');
+    try {
+        const response = await axios.get(`${BASE_URL}${id}/`, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching animal details:', error);
+        throw error;
+    }
+}
+
+export default { getAnimals, getAnimalById }
