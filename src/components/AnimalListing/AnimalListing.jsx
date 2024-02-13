@@ -73,13 +73,13 @@ const AnimalList = () => {
           <option value="Cat">Cat</option>
         </select>
 
-        {/* <select onChange={(e) => handleFilterChange('age', e.target.value)} value={searchParams.get('age') || ''}>
+        <select onChange={(e) => handleFilterChange('age', e.target.value)} value={searchParams.get('age') || ''}>
           <option value="">All Ages</option>
           <option value="Baby">Baby</option>
           <option value="Young">Young</option>
           <option value="Adult">Adult</option>
           <option value="Senior">Senior</option>
-        </select> */}
+        </select>
 
         <select onChange={(e) => handleFilterChange('gender', e.target.value)} value={searchParams.get('gender') || ''}>
           <option value="">Any Gender</option>
