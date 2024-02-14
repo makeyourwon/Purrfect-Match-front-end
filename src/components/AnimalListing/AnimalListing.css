@@ -1,0 +1,49 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cardItem {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 240px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background: #f9f9f9;
+}
+/* Other styles remain the same */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Ensure pagination controls wrap on small screens */
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #f0f0f0; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Slightly rounded corners for aesthetics */
+  }
+  
+  .pagination button:hover {
+    background-color: #e9e9e9; /* Slightly darker grey on hover */
+  }
+  
+  .pagination button:active {
+    transform: scale(0.98); /* Slight press-down effect */
+  }
+  
+  .pagination .active {
+    background-color: #007bff; /* Bootstrap blue for the active page */
+    color: white;
+    border-color: #007bff;
+  }
+  
