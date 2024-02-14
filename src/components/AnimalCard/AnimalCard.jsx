@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const AnimalCard = ({ animal}) => {
 
- const displayImage = animal.photos.length > 0 ? animal.photos[0].medium : null;
+//  const displayImage = animal.photo_url.length > 0 ? animal.photo_url[0].medium: null;
+const displayImage = animal.photo_url;
 
   return (
    
