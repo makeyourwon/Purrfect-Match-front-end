@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import favortieService from '../../services/favortieService';
+import favoriteService from '../../services/favoriteService';
 import AnimalCard from '../AnimalCard/AnimalCard';
 
 const FavoritesList = () => {
@@ -8,7 +8,7 @@ const FavoritesList = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const data = await favortieService.getFavorites();
+        const data = await favoriteService.getFavorites();
         console.log(data)
         setFavorites(data);
       } catch (error) {
@@ -16,10 +16,9 @@ const FavoritesList = () => {
       }
     };
     fetchFavorites();
-    console.log("here" + favorites)
   }, []);
 
-  console.log("here" + favorites)
+
 
   return (
     // <>
@@ -31,7 +30,7 @@ const FavoritesList = () => {
     //     ))}
     //   </div>
     // </>
-<>
+    <>
       <div className="card-container">
         {favorites != undefined ? (
           favorites.map((favorite) => (
