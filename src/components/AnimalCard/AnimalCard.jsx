@@ -1,14 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const AnimalCard = ({ animal}) => {
+
+//  const displayImage = animal.photo_url.length > 0 ? animal.photo_url[0].medium: null;
+const displayImage = animal.photo_url;
+
   return (
-    <div className="animal-card">
-      <img src={animal.image} alt={animal.name}/>
+   
+    // <div className="animal-card">
+    //   {displayImage && <img src={displayImage} alt={`Photo of ${animal.name}`} />}
+    //   <h2>{animal.name}</h2>
+    //   <p>Age: {animal.age}</p>
+    //   <p>Location: {animal.location}</p>
+    // </div>
+    <Link to={`/animals/${animal.id}`} className="animal-card">
+      {displayImage && <img src={displayImage} alt={`Photo of ${animal.name}`} />}
       <h2>{animal.name}</h2>
-      <p>Type: {animal.type}</p>
       <p>Age: {animal.age}</p>
-      {/* More to be included will make a group check on monday */}
-    </div>
+      <p>Location: {animal.location}</p>
+      {/* Add more details as per your requirement */}
+    </Link>
+
   )
 }
 

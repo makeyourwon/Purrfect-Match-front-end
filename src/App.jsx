@@ -4,10 +4,11 @@ import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
+import Profiles from './pages/Profiles/Profile'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage'
 import AnimalPage from './pages/AnimalPage/AnimalPage'
+import AnimalDetails from './pages/AnimalDetails/AnimalDetails'
 
 import * as authService from './services/authService'
 
@@ -39,31 +40,38 @@ const App = () => {
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
-        <Route 
+        <Route
           path="/profile"
           element={
-          <ProtectedRoute user={user}>
-            <Profiles />
-          </ProtectedRoute>
-          
+            <ProtectedRoute user={user}>
+              <Profiles />
+            </ProtectedRoute>
+
           }
         />
         <Route
-        path="/favorites"
-        element={
-        <ProtectedRoute user={user}>
-          <FavoritesPage />
-        </ProtectedRoute>
-        }
+          path="/favorites"
+          element={
+            <ProtectedRoute user={user}>
+              <FavoritesPage />
+            </ProtectedRoute>
+          }
         />
         <Route
-        path="/listings" 
-        element={
-        <ProtectedRoute user={user}>
-          <AnimalPage />
-        </ProtectedRoute>
-        } 
+          path="/listings"
+          element={
+            <ProtectedRoute user={user}>
+              <AnimalPage />
+            </ProtectedRoute>
+          }
         />
+        <Route
+          path="/animals/:animalId"
+          element={
+            <ProtectedRoute user={user}>
+              <AnimalDetails />
+            </ProtectedRoute>
+          } />
       </Routes>
     </>
   )

@@ -1,34 +1,29 @@
-/* Basic CSS styling for form elements */
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="tel"],
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box; /* Makes sure padding and border are included in the element's total width and height */
-}
-
-button {
+.profile-title-container {
   background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-  background-color: #0056b3;
+.profile-title-container h1 {
+  margin: 0;
 }
+
+.profile-form-container {
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+  background-color: aqua;
+}
+
+
