@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import AnimalCard from '../AnimalCard/AnimalCard';
 import animalService from '../../services/animalService';
 // Import CSS module for styles
-import styles from './AnimalListing.css'
+import './AnimalListing.css'
 
 const AnimalList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,8 +50,8 @@ const AnimalList = () => {
       <button onClick={toggleFilterModal}>Filter</button>
 
       {isFilterModalVisible && (
-        <div className={styles.modalBackdrop}>
-          <div className={styles.modalContent}>
+        <div className="modalBackdrop">
+          <div className="modalContent">
             <button onClick={toggleFilterModal}>Close</button>
             {/* Filter options */}
             <div>
