@@ -1,9 +1,8 @@
-import React, { useState, useEffect, applyFilters } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import AnimalCard from '../AnimalCard/AnimalCard'
 import animalService from '../../services/animalService'
 import styles from './AnimalListing.css'
-// const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/animals/` // Subject to change (maybe)
 
 const AnimalList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -11,7 +10,7 @@ const AnimalList = () => {
   const [filteredAnimals, setFilteredAnimals] = useState([]) // State for storing filtered animals
   const [currentPage, setCurrentPage] = useState(1) // for current page #
   const [animalsPerPage] = useState(8) // # of animals displayed on screen at one time
-  const [filters, setFilters] = useState({}) // state for filters 
+  const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
 
 
   useEffect(() => {
@@ -29,21 +28,10 @@ const AnimalList = () => {
     fetchAnimals();
   }, [searchParams]);
 
-  // useEffect(() => {
-  //   //effect to apply filters 
-  //   applyFilters()
-  // }, [filters, animals])
+  const toggleFilterModal = () => {
+    setIsFilterModalVisible(!isFilterModalVisible);
+  };
 
-  // const applyFilters = () => {
-  //   let filteredResults = animals // Initialize filteredResults with all animals initially
-  //   if(filters.age) {
-  //     filteredResults = filteredResults.filter(animal => animal.age === filters.age) // filters animals by age
-  //   }
-  //   if(filters.type) {
-  //     filteredResults = filteredResults.filter(animal => animal.type === filters.type) // filters animals by type
-  //   }
-  //   setFilteredAnimals(filteredResults)
-  // }
 
   const handleFilterChange = (filterType, value) => {
     const newFilters = new URLSearchParams(searchParams);
@@ -58,37 +46,40 @@ const AnimalList = () => {
   const currentAnimals = filteredAnimals.slice(indexOfFirstAnimal, indexOfLastAnimal) // Slice the filteredAnimals array to get animals for the current page 
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber) // this is used ti change the filter page number 
-  //Work in progress ///////////////////////////////////////////////////
+
   return (
-    // <FilterBar onFilterChange={handleFilterChange}/>
-    // <div> hi
-    //   <AnimalCard />
-    // </div>
-
     <>
-      <div>
-        <select onChange={(e) => handleFilterChange('type', e.target.value)} value={searchParams.get('type') || ''}>
-          <option value="">All Types</option>
-          <option value="Dog">Dog</option>
-          <option value="Cat">Cat</option>
-        </select>
+      <button onClick={toggleFilterModal}>Filter</button>
 
-        <select onChange={(e) => handleFilterChange('age', e.target.value)} value={searchParams.get('age') || ''}>
-          <option value="">All Ages</option>
-          <option value="Baby">Baby</option>
-          <option value="Young">Young</option>
-          <option value="Adult">Adult</option>
-          <option value="Senior">Senior</option>
-        </select>
+      {isFilterModalVisible && (
+        <div className={styles.modalBackdrop}>
+          <div className={styles.modalContent}>
+            <button onClick={toggleFilterModal}>Close</button>
+            {/* Filter options */}
+            <div>
+              {/* Filter selection for type, age, and gender */}
+              <select onChange={(e) => handleFilterChange('type', e.target.value)} value={searchParams.get('type') || ''}>
+                <option value="">All Types</option>
+                {/* Options for types */}
+              </select>
+              <select onChange={(e) => handleFilterChange('age', e.target.value)} value={searchParams.get('age') || ''}>
+                <option value="">All Ages</option>
+                <option value="Baby">Baby</option>
+                <option value="Young">Young</option>
+                <option value="Adult">Adult</option>
+                <option value="Senior">Senior</option>
+              </select>
 
-        <select onChange={(e) => handleFilterChange('gender', e.target.value)} value={searchParams.get('gender') || ''}>
-          <option value="">Any Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-
-        {/* Consider adding more filters based on your model fields */}
-      </div>
+              <select onChange={(e) => handleFilterChange('gender', e.target.value)} value={searchParams.get('gender') || ''}>
+                <option value="">Any Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              {/* Repeat for other filters */}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className={styles.cardContainer}>
         {currentAnimals.map((animal) => (
@@ -97,7 +88,7 @@ const AnimalList = () => {
           </div>
         ))}
       </div>
-      <div className={styles.pagination}>
+      <div>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
           <button
             key={number}
@@ -109,9 +100,7 @@ const AnimalList = () => {
         ))}
       </div>
     </>
-
-
-  )
-}
+  );
+};
 
 export default AnimalList
