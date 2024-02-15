@@ -39,3 +39,11 @@
 .animal-card button:hover {
   background-color: #0056b3; /* Darker shade of blue on hover */
 }
+
+.animal-card button.favorite {
+  background-color: #d9534f; /* Example color for favorite: red */
+}
+
+.animal-card button.not-favorite {
+  background-color: #007bff; /* Example color for not favorite: blue */
+}
