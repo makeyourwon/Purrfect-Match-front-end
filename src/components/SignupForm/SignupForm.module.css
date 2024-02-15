@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -13,4 +13,62 @@
 
 .inputContainer {
   margin-bottom: 1rem;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: auto;
+  width: 50%; /* Adjust the width as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fffffc ;
 }
+
+.inputContainer {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #ff7f11;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:disabled {
+  background-color: #BEB7A4;
+  cursor: default;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #b45b0e;
+}
+
+button {
+  margin-right: 10px;
+}
+
+/* Add any additional styling you need */
