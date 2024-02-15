@@ -1,5 +1,6 @@
 import React from "react";
 import AnimalList from "../../components/AnimalListing/AnimalListing";
+// import './AnimalPage.css'
 
 const AnimalPage = () => {
   return (

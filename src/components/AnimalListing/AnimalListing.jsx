@@ -86,9 +86,9 @@ const AnimalList = () => {
         </div>
       )}
 
-      <div className={styles.cardContainer}>
+      <div className="cardContainer">
         {currentAnimals.map((animal) => (
-          <div key={animal.id} className={styles.cardItem}>
+          <div key={animal.id} className="cardItem">
             <AnimalCard animal={animal} />
           </div>
         ))}
