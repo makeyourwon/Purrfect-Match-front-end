@@ -58,6 +58,7 @@ console.log(profile)
         <button onClick={handleOpenModal}>Update Profile</button>
       </div>
     </div> 
+    {/* also the above update form doesnt seem to important for now, styling can be done in the profile page (i think) */}
     {/* modal below is for when a user decides to update className for form with all the input is update-form */}
     {showModal && (
       <div className="modal">
