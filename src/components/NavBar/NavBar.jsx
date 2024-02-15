@@ -20,17 +20,17 @@ const NavBar = ({ user, handleLogout }) => {
       <ul className="nav-links">
         {user ? (
           <>
-          <li>Welcome, {user.username}</li>
-          <li><NavLink className="nav-link" to="/profile">{profile?.name}'s Profile</NavLink></li>
-          <li><NavLink className="nav-link" to="/home"></NavLink>Home</li>
-          <li><NavLink className="nav-link" to="/favorites">Favorites</NavLink></li>
-          <li><NavLink className="nav-link" to="/listings">Availible Pets</NavLink></li>
+          <li>Welcome, {profile.name}</li>
+          <li><NavLink className="nav-link" to="/profile">My Profile</NavLink></li>
+          <li><NavLink className="nav-link" to="/favorites">My Favorites</NavLink></li>
+          <li><NavLink className="nav-link" to="/listings">Animal Listing</NavLink></li>
           <li><NavLink className="nav-link" to="" onClick={handleLogout}>Log out</NavLink></li>
           </>
         ) : (
           <>
-          <li><NavLink className="nav-link" to="/login">log in</NavLink></li>
-          <li><NavLink className="nav-link" to="/signup">signup</NavLink></li>
+          <li><NavLink className="nav-link" to="/login">Log In</NavLink></li>
+          <li><NavLink className="nav-link" to="/signup">Sign Up</NavLink></li>
+          <li><NavLink className="nav-link" to="/home">Home</NavLink></li>
           </>
         )}
       </ul>
