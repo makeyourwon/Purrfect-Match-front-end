@@ -9,7 +9,6 @@ const AnimalCard = ({ animal }) => {
 
   console.log(animal)
   const displayImage = animal.photo_url.photo.length > 0 ? animal.photo_url.photo[0].medium : null;
-  // const displayImage = animal.photo_url;
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -74,7 +73,7 @@ const AnimalCard = ({ animal }) => {
       <div className="animal-info">
         <h2>{animal.name}</h2>
         <p>Age: {animal.age}</p>
-        <p>Location: {animal.location}</p>
+        <p>Status: {animal.status}</p>
       </div>
       <button onClick={(e) => {
         e.stopPropagation(); // Prevent navigation
