@@ -15,7 +15,7 @@ async function getProfile() {
 
         // Handle the response here (e.g., convert to JSON or check status)
         const profile = await res.json();
-        console.log(profile);
+        console.log(profile,'res');
         return profile;
     } catch (error) {
         console.error('Error fetching profile:', error);
