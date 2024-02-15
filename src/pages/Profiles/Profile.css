@@ -1,5 +1,5 @@
 body {
-  background-color: #fffffC;
+  background-color: #fffffc;
 }
 
 .profile-page-container {
@@ -9,11 +9,11 @@ body {
 }
 
 .profile-title-container {
-  background-color: #ff1b1c;
+  background-color: #452b21;
   color: #fffffC;
   padding: 10px 20px;
   border-radius: 10px 10px;
-  width: 80%;
+  width: 80vw;
   text-align: center;
   box-shadow: 10px 20px 4px rgba(0, 0, 0, 0.1);
 }
@@ -23,11 +23,13 @@ body {
 }
 
 .profile-form-container {
-  width: 100%;
-  max-width: 500px; /* Adjust as needed */
-  box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80vw;
+  /* height: 100%; */
+  /* max-height: 85vh; */
+  /* box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1); */
   border-radius: 0 0 5px 5px;
-  background-color: #ff7f11;
+
+
 }
 
 

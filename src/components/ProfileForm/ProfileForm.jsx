@@ -49,10 +49,10 @@ console.log(profile)
     <>
     <div className="profile-container">
       <div className="profile-info">
-        <h1>{profile.name}</h1>
-        <h1>Age:{profile.age}</h1>
-        <h1>Location:{profile.location}</h1>
-        <h1>Phone:{profile.phone}</h1>
+      <h1 className="profile-name">{profile.name}</h1>
+      <h1>Age: <span className="profile-age">{profile.age}</span></h1>
+      <h1>Location: <span className="profile-location">{profile.location}</span></h1>
+      <h1>Phone: <span className="profile-phone">{profile.phone}</span></h1>
         <Link to="/favorites">
         <button className="favorites-button"> Go to Favorites</button>
         </Link>

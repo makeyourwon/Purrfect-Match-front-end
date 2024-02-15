@@ -1,16 +1,32 @@
 
-/* CSS below is just for basic modeling and for me to see and test the profile page/components feel free to refactor anything to your liking */
-
-/* .profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-} */
+.profile-container {
+  border-radius: 10px; /* Adjust the value as needed */
+  background-color: #fffffc; /* Adjust the background color as needed */
+  padding: 50px; /* Adjust the padding as needed */
+  text-align: center;
+  border: 3px solid #452b21;
+}
 
 .profile-info {
-  text-align: center;
+  font-weight: bold;
 }
+
+.profile-age,
+.profile-location,
+.profile-phone {
+  font-weight:lighter;
+  color: #ff1b1c; 
+}
+
+
+.profile-info h1 {
+  display: block; /* Ensure each h1 starts on a new line */
+  margin: 10px 0; /* Adjust the margin as needed */
+  font-size: larger;
+  text-align: left;
+  color: #452b21;
+}
+
 
 .modal {
   position: fixed;
@@ -68,9 +84,9 @@
   padding: 10px 10px;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
   margin-right: 10px;
   margin-left: 10px;
-  margin-bottom: 10px;
 }
 /* .profile-info button:last-child {
   margin-right: 0;
