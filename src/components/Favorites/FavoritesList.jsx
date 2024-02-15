@@ -33,7 +33,7 @@ const FavoritesList = () => {
     // </>
     <>
       <div className="card-container">
-        {favorites != undefined ? (
+        {favorites && favorites.length > 0 ?(
           favorites.map((favorite) => (
             <div key={favorite.id} className="cardItem">
               <AnimalCard animal={favorite} />
