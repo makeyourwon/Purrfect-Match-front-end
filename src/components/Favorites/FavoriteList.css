@@ -1,0 +1,11 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjusts spacing around items */
+  gap: 20px; /* Space between the cards */
+}
+
+.cardItem {
+  width: calc(25% - 20px); /* Adjust for 4 items per row with gap */
+  margin-bottom: 20px; /* Space between rows */
+}

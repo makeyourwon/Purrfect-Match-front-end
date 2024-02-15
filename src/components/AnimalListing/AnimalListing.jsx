@@ -97,7 +97,7 @@ const AnimalList = () => {
         {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
           <button
             key={number}
-            className={`${currentPage === number ? styles.active : ''}`}
+            className={`${currentPage === number ? "active" : ''}`}
             onClick={() => paginate(number)}
           >
             {number}

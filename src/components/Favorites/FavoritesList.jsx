@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import favoriteService from '../../services/favoriteService';
 import AnimalCard from '../AnimalCard/AnimalCard';
+import './FavoriteList.css'
 
 const FavoritesList = () => {
   const [favorites, setFavorites] = useState([])
@@ -34,7 +35,7 @@ const FavoritesList = () => {
       <div className="card-container">
         {favorites != undefined ? (
           favorites.map((favorite) => (
-            <div key={favorite.id} className="animal-card">
+            <div key={favorite.id} className="cardItem">
               <AnimalCard animal={favorite} />
             </div>
           ))
