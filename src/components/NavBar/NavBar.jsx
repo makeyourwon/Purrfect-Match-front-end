@@ -30,7 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
           <>
           <li><NavLink className="nav-link" to="/login">Log In</NavLink></li>
           <li><NavLink className="nav-link" to="/signup">Sign Up</NavLink></li>
-          <li><NavLink className="nav-link" to="/home">Home</NavLink></li>
+          <li><NavLink className="nav-link" to="/">Home</NavLink></li>
           </>
         )}
       </ul>
