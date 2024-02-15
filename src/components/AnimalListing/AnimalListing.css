@@ -32,3 +32,25 @@
   width: 50%; /* Adjust based on your design needs */
   z-index: 1001; /* Ensures content is above the backdrop */
 }
+/* GPT ASSITANCE */
+.active {
+  background-color: #007bff;
+  color: white;
+}
+
+
+button {
+  background-color: #007bff; /* Blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: scale(1.05);
+}

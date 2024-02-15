@@ -19,9 +19,12 @@ const AnimalDetails = () => {
     fetchAnimalDetails();
   }, [animalId]);
 
-   if (!animal) {
+  if (!animal) {
     return <div>Loading...</div>; // Or any other loading state
   }
+
+  const displayImage = animal.photo_url.photo[0].medium 
+
   // Fetch the animal details using animalId or display a loading state until the data is fetched
   return (
     <div>
@@ -32,8 +35,8 @@ const AnimalDetails = () => {
       <p>Gender: {animal.gender}</p>
       <p>Status: {animal.status}</p>
       <p>Description: {animal.description || 'No description available.'}</p>
-      {animal.photos && animal.photos.length > 0 && (
-        <img src={animal.photos[0].medium} alt={`Photo of ${animal.name}`} />
+      {displayImage && (
+        <img src={displayImage} alt={`Photo of ${animal.name}`} />
       )}
       <div>
         <h3>Contact Information:</h3>
