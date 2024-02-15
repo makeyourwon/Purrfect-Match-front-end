@@ -1,5 +1,5 @@
 nav {
-  background-color: rgb(1, 11, 8);
+  background-color: #ff1b1c;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,9 +7,8 @@ nav {
   position: fixed;
   top:0;
   left:0;
-  color: aliceblue;
+  color: #fffffC;
   width:100%;
-  background-color: rgb(1, 11, 8);
   z-index: 1000;
 }
 .nav-links{
@@ -23,10 +22,12 @@ nav {
 }
 .logo {
   font-weight:bold;
+  /* if someone is seeing this, pls change these fonts to anything you like */
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
 }
 .nav-link{
-  color: dodgerblue;
-  font-family: 'Cormorant Garamond', serif;
+  color: #fffffC;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 body {
   padding-top: 80px; /* Adjust this value according to your navigation bar height */

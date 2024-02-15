@@ -1,12 +1,12 @@
 
 /* CSS below is just for basic modeling and for me to see and test the profile page/components feel free to refactor anything to your liking */
 
-.profile-container {
+/* .profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
+  height: 50vh;
+} */
 
 .profile-info {
   text-align: center;
@@ -61,3 +61,21 @@
 .update-form button:hover {
   background-color: #0056b3;
 }
+.profile-info button {
+  border-radius: 20px;
+  background-color: #cbe896;
+  font-family: Arial, sans-serif; /* Change this to your preferred font */
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+/* .profile-info button:last-child {
+  margin-right: 0;
+} */
+.profile-info button:hover {
+  background-color: #a9d18e; /* You can adjust the hover color as needed */
+}
+
