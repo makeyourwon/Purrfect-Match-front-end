@@ -75,13 +75,13 @@ const AnimalCard = ({ animal }) => {
         <p>Age: {animal.age}</p>
         <p>Status: {animal.status}</p>
       </div>
-      <button onClick={(e) => {
+      <button id="heartButton" onClick={(e) => {
         e.stopPropagation(); // Prevent navigation
         toggleFavorite();
       }}
         className={isFavorite ? 'favorite' : 'not-favorite'}
       >
-        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+        {isFavorite ? '💙' : '❤️'}
       </button>
     </div>
 
