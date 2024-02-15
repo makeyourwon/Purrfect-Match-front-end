@@ -1,0 +1,41 @@
+.animal-card {
+  background-color: white;
+  border-radius: 15px; /* Rounded edges */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a slight shadow for depth */
+  overflow: hidden; /* Ensures the content respects the border radius */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Needed to position the favorite button */
+  width: 300px; /* Adjust width as needed */
+}
+
+.animal-card img {
+  width: 100%; /* Make the image take up the full width of the card */
+  height: 70%; /* Adjust height as needed to make the image take up majority of the card */
+  object-fit: cover; /* Ensures the image covers the area nicely */
+  border-top-left-radius: 15px; /* Rounded corners at the top of the image */
+  border-top-right-radius: 15px;
+}
+
+.animal-card .animal-info {
+  padding: 10px;
+  text-align: center; /* Center the text underneath the image */
+}
+
+.animal-card button {
+  position: absolute; /* Position the button over the image */
+  top: 10px; /* Adjust distance from top */
+  right: 10px; /* Adjust distance from right */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #007bff; /* Example color: blue */
+  color: white;
+  cursor: pointer;
+}
+
+/* Additional styling for hover effects on the button */
+.animal-card button:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
