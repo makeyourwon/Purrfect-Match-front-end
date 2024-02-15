@@ -2,4 +2,36 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-image: url('../../assets/home-page-background.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.button {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #452b21;
+  color: #fff;
+  /* border: 1px solid #efd9c4ea; */
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.502);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover, .button:focus {
+  box-shadow: 0 0 15px 5px rgba(236, 132, 28, 0.6); /* Glowing effect */
 }

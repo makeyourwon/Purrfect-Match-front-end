@@ -1,5 +1,35 @@
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: auto;
+  width: 70%; /* Adjust the width based on your layout */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  /* border-radius: 8px; */
+
 }
+
+.container h1 {
+  color: #333; /* Dark color for contrast */
+  font-size: 2.5em; /* Makes the title larger */
+  margin-bottom: 20px; /* Adds space below the title */
+  text-align: center; /* Centers the title */
+  font-weight: bold; /* Makes the title text bold */
+  text-transform: uppercase; /* Optional: transforms the text to uppercase */
+  letter-spacing: 1.5px; /* Optional: increases spacing between letters */
+  margin-top: 0; /* Adjusts the top margin */
+  line-height: 1.2; /* Adjusts the line height for better readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow for depth */
+}
+
+/* Add any additional styling you need */
+
+
+.container p {
+  color: #666; /* Slightly lighter color for the message */
+  margin-bottom: 15px;
+}
+
+/* Add any additional styling you need */
