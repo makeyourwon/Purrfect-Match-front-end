@@ -51,6 +51,11 @@
   background-color: #007bff; /* Example color for not favorite: blue */
 }
 
+.animal-info h1{
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+}
 
 
 

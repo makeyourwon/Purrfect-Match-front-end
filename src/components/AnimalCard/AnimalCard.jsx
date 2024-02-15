@@ -72,9 +72,8 @@ const AnimalCard = ({ animal }) => {
     <div className="animal-card" onClick={() => navigate(`/animals/${animal.id}`)}>
       {displayImage && <img src={displayImage} alt={animal.name} />}
       <div className="animal-info">
-        <h2>{animal.name}</h2>
-        <p>Age: {animal.age}</p>
-        <p>Status: {animal.status}</p>
+        <h1>{animal.name} </h1>
+        <h2>{animal.age} | {animal.gender} </h2>
       </div>
       <button id="heartButton" onClick={(e) => {
         e.stopPropagation(); // Prevent navigation
