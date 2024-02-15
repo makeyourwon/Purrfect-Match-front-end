@@ -42,6 +42,7 @@ console.log(profile)
     const updatedProfile = await profileService.updateProfile(profile);
     console.log('Profile updated:', updatedProfile);
     setShowModal(false)
+    window.location.reload()
   };
 
   return (
