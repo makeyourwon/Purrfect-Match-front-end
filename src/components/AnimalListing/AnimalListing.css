@@ -1,49 +1,34 @@
+/* Layout for animal cards to be side by side */
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  justify-content: space-around; /* Adjusts spacing around items */
+  gap: 20px; /* Space between the cards */
 }
 
 .cardItem {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 240px;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
-  background: #f9f9f9;
+  width: calc(25% - 20px); /* Adjust for 4 items per row with gap */
+  margin-bottom: 20px; /* Space between rows */
 }
-/* Other styles remain the same */
 
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    flex-wrap: wrap; /* Ensure pagination controls wrap on small screens */
-  }
-  
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: #f0f0f0; /* Light grey background */
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 5px; /* Slightly rounded corners for aesthetics */
-  }
-  
-  .pagination button:hover {
-    background-color: #e9e9e9; /* Slightly darker grey on hover */
-  }
-  
-  .pagination button:active {
-    transform: scale(0.98); /* Slight press-down effect */
-  }
-  
-  .pagination .active {
-    background-color: #007bff; /* Bootstrap blue for the active page */
-    color: white;
-    border-color: #007bff;
-  }
-  
+/* Styles for the modal */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures the modal is above other content */
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%; /* Adjust based on your design needs */
+  z-index: 1001; /* Ensures content is above the backdrop */
+}
