@@ -7,7 +7,9 @@
   flex-direction: column;
   align-items: center;
   position: relative; /* Needed to position the favorite button */
-  width: 300px; /* Adjust width as needed */
+  width: auto; /* Adjust width as needed */
+  height: 25em;
+  
 }
 
 .animal-card img {
@@ -16,6 +18,7 @@
   object-fit: cover; /* Ensures the image covers the area nicely */
   border-top-left-radius: 15px; /* Rounded corners at the top of the image */
   border-top-right-radius: 15px;
+  
 }
 
 .animal-card .animal-info {
@@ -47,6 +50,8 @@
 .animal-card button.not-favorite {
   background-color: #007bff; /* Example color for not favorite: blue */
 }
+
+
 
 
 
