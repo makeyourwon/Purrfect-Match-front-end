@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import favoriteService from '../../services/favoriteService';
 import '../AnimalCard/AnimalCard.css'
 
+
 const AnimalCard = ({ animal }) => {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false)
@@ -81,7 +82,7 @@ const AnimalCard = ({ animal }) => {
       }}
         className={isFavorite ? 'favorite' : 'not-favorite'}
       >
-        {isFavorite ? '💙' : '❤️'}
+        {isFavorite ? '❤️' : '♡'}
       </button>
     </div>
 
