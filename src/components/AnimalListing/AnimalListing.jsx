@@ -93,7 +93,7 @@ const AnimalList = () => {
           </div>
         ))}
       </div>
-      <div>
+      <div id='pages'>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
           <button
             key={number}
