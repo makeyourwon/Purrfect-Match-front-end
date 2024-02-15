@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import AnimalCard from '../AnimalCard/AnimalCard'
-import animalService from '../../services/animalService'
+import AnimalCard from '../AnimalCard/AnimalCard';
+import animalService from '../../services/animalService';
+// Import CSS module for styles
 import styles from './AnimalListing.css'
 
 const AnimalList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [animals, setAnimals] = useState([])  // State to store all animals
-  const [filteredAnimals, setFilteredAnimals] = useState([]) // State for storing filtered animals
-  const [currentPage, setCurrentPage] = useState(1) // for current page #
-  const [animalsPerPage] = useState(8) // # of animals displayed on screen at one time
-  const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
-
+  const [animals, setAnimals] = useState([]); // State to store all animals
+  const [filteredAnimals, setFilteredAnimals] = useState([]); // State for storing filtered animals
+  const [currentPage, setCurrentPage] = useState(1); // Current page number
+  const [animalsPerPage] = useState(8); // Number of animals per page
+  const [isFilterModalVisible, setIsFilterModalVisible] = useState(false); // State to manage filter modal visibility
 
   useEffect(() => {
     const fetchAnimals = async () => {
       try {
         const filters = Object.fromEntries([...searchParams]);
         const data = await animalService.getAnimals(filters);
-        console.log(data)
+        console.log(data);
         setAnimals(data);
-        setFilteredAnimals(data)
+        setFilteredAnimals(data);
       } catch (error) {
         console.error('Error fetching animals:', error);
       }
@@ -32,7 +32,6 @@ const AnimalList = () => {
     setIsFilterModalVisible(!isFilterModalVisible);
   };
 
-
   const handleFilterChange = (filterType, value) => {
     const newFilters = new URLSearchParams(searchParams);
     value ? newFilters.set(filterType, value) : newFilters.delete(filterType);
@@ -40,12 +39,11 @@ const AnimalList = () => {
   };
 
   const totalPages = Math.ceil(animals.length / animalsPerPage);
+  const indexOfLastAnimal = currentPage * animalsPerPage;
+  const indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
+  const currentAnimals = filteredAnimals.slice(indexOfFirstAnimal, indexOfLastAnimal);
 
-  const indexOfLastAnimal = currentPage * animalsPerPage // Calculate index of last animal on current page
-  const indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage // Calculate index of first animal on current page
-  const currentAnimals = filteredAnimals.slice(indexOfFirstAnimal, indexOfLastAnimal) // Slice the filteredAnimals array to get animals for the current page 
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber) // this is used ti change the filter page number 
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -62,6 +60,13 @@ const AnimalList = () => {
                 <option value="">All Types</option>
                 {/* Options for types */}
               </select>
+
+              <select onChange={(e) => handleFilterChange('type', e.target.value)} value={searchParams.get('type') || ''}>
+                <option value="">All Types</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+              </select>
+
               <select onChange={(e) => handleFilterChange('age', e.target.value)} value={searchParams.get('age') || ''}>
                 <option value="">All Ages</option>
                 <option value="Baby">Baby</option>
@@ -103,4 +108,4 @@ const AnimalList = () => {
   );
 };
 
-export default AnimalList
+export default AnimalList;

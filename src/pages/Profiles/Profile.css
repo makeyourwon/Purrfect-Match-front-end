@@ -1,3 +1,7 @@
+body {
+  background-color: #fffffC;
+}
+
 .profile-page-container {
   display: flex;
   flex-direction: column;
@@ -5,13 +9,13 @@
 }
 
 .profile-title-container {
-  background-color: #007bff;
-  color: white;
+  background-color: #ff1b1c;
+  color: #fffffC;
   padding: 10px 20px;
-  border-radius: 10px 10px 0 0;
-  width: 100%;
+  border-radius: 10px 10px;
+  width: 80%;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 20px 4px rgba(0, 0, 0, 0.1);
 }
 
 .profile-title-container h1 {
@@ -21,9 +25,9 @@
 .profile-form-container {
   width: 100%;
   max-width: 500px; /* Adjust as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0 0 5px 5px;
-  background-color: aqua;
+  background-color: #ff7f11;
 }
 
 
