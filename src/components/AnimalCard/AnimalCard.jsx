@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import favoriteService from '../../services/favoriteService';
+import '../AnimalCard/AnimalCard.css'
 
 const AnimalCard = ({ animal }) => {
   const navigate = useNavigate();
@@ -70,9 +71,11 @@ const AnimalCard = ({ animal }) => {
     //Favorite Button
     <div className="animal-card" onClick={() => navigate(`/animals/${animal.id}`)}>
       {displayImage && <img src={displayImage} alt={animal.name} />}
+      <div className="animal-info">
       <h2>{animal.name}</h2>
       <p>Age: {animal.age}</p>
       <p>Location: {animal.location}</p>
+      </div>
       <button onClick={(e) => {
         e.stopPropagation(); // Prevent navigation
         toggleFavorite();
