@@ -72,14 +72,16 @@ const AnimalCard = ({ animal }) => {
     <div className="animal-card" onClick={() => navigate(`/animals/${animal.id}`)}>
       {displayImage && <img src={displayImage} alt={animal.name} />}
       <div className="animal-info">
-      <h2>{animal.name}</h2>
-      <p>Age: {animal.age}</p>
-      <p>Location: {animal.location}</p>
+        <h2>{animal.name}</h2>
+        <p>Age: {animal.age}</p>
+        <p>Location: {animal.location}</p>
       </div>
       <button onClick={(e) => {
         e.stopPropagation(); // Prevent navigation
         toggleFavorite();
-      }}>
+      }}
+        className={isFavorite ? 'favorite' : 'not-favorite'}
+      >
         {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
       </button>
     </div>
