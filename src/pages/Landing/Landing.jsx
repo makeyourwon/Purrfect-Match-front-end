@@ -1,17 +1,27 @@
 import styles from './Landing.module.css'
 import logo from '../../assets/logo-7.png'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Landing = ({ user }) => {
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    
+    if (user) {
+      navigate('/listings'); 
+    }
+  }, [user, navigate]); 
+
+
   const navigateToSignUp = () => {
-    navigate('/signup'); 
+    navigate('/signup');
   };
 
   // Function to navigate to the Log In page
   const navigateToLogIn = () => {
-    navigate('/login'); 
+    navigate('/login');
   };
 
   return (
