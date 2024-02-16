@@ -12,7 +12,6 @@ import AnimalDetails from './pages/AnimalDetails/AnimalDetails'
 
 import * as authService from './services/authService'
 
-
 const App = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState(authService.getUser())
@@ -46,7 +45,6 @@ const App = () => {
             <ProtectedRoute user={user}>
               <Profiles />
             </ProtectedRoute>
-
           }
         />
         <Route

@@ -18,7 +18,6 @@ const AnimalList = () => {
       try {
         const filters = Object.fromEntries([...searchParams]);
         const data = await animalService.getAnimals(filters);
-        console.log(data);
         setAnimals(data);
         setFilteredAnimals(data);
       } catch (error) {

@@ -10,7 +10,6 @@ const FavoritesList = () => {
     const fetchFavorites = async () => {
       try {
         const data = await favoriteService.getFavorites();
-        console.log(data)
         setFavorites(data);
       } catch (error) {
         console.error('Error fetching Favorties:', error);
