@@ -53,12 +53,12 @@ const AnimalList = () => {
         <div className="modalBackdrop">
           <div className="modalContent">
             <button onClick={toggleFilterModal}>Close</button>
-            {/* Filter options */}
+            
             <div>
-              {/* Filter selection for type, age, and gender */}
+           
               <select onChange={(e) => handleFilterChange('type', e.target.value)} value={searchParams.get('type') || ''}>
                 <option value="">All Types</option>
-                {/* Options for types */}
+                
               </select>
 
               <select onChange={(e) => handleFilterChange('type', e.target.value)} value={searchParams.get('type') || ''}>
@@ -80,7 +80,7 @@ const AnimalList = () => {
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
-              {/* Repeat for other filters */}
+              
             </div>
           </div>
         </div>
