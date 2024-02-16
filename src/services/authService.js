@@ -1,17 +1,15 @@
-//import tokenservice
 import * as tokenService from './tokenService'
-//set the base url to the env variable
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/` // Subject to change
-// retrive user data from token 
+
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/`
+
+
 function getUser() {
   return tokenService.getUserFromToken()
 }
-// signup function 
+
 async function signup(user) {
   try {
-    //set response to awiat the fetch for signup 
     const res = await fetch(`${BASE_URL}register/`, {
-      //set request method 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(user),
@@ -25,7 +23,6 @@ async function signup(user) {
       throw new Error(json.err)
     }
   } catch (err) {
-    console.log(err)
     throw err
   }
 }
@@ -37,8 +34,7 @@ async function login(credentials) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(credentials),
     })
-    const json = await res.json()
-    console.log(res) 
+    const json = await res.json() 
     if (json.access) {
       tokenService.setToken(json.access)
     }

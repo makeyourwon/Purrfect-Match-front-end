@@ -5,7 +5,6 @@ import styles from './LoginForm.module.css'
 import * as authService from '../../services/authService'
 
 const LoginForm = (props) => {
-  console.log(props)
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     username: '',
@@ -21,7 +20,6 @@ const LoginForm = (props) => {
     e.preventDefault()
     try {
       await authService.login(formData)
-      console.log(formData)
       props.handleSignupOrLogin()
       navigate('/profile')
     } catch (err) {

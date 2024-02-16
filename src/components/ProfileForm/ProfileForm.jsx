@@ -22,7 +22,6 @@ const ProfileForm = ({ handleLogout }) => {
     };
     fetchProfile(); 
   }, []);
-console.log(profile)
   if (!profile) return <div>Loading profile...</div>;
 
   const handleCloseModal = () => {
@@ -40,7 +39,6 @@ console.log(profile)
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent form from causing a page reload
     const updatedProfile = await profileService.updateProfile(profile);
-    console.log('Profile updated:', updatedProfile);
     setShowModal(false)
     window.location.reload()
   };
