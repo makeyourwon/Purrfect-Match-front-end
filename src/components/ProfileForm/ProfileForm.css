@@ -15,14 +15,14 @@
 .profile-location,
 .profile-phone {
   font-weight:lighter;
-  color: #ff1b1c; 
+  color: #b25321; 
 }
 
 
 .profile-info h1 {
-  display: block; /* Ensure each h1 starts on a new line */
-  margin: 10px 0; /* Adjust the margin as needed */
-  font-size: larger;
+  display: block;
+  margin: 10px 0; 
+  font-size: 1.6em; 
   text-align: left;
   color: #452b21;
 }
@@ -80,7 +80,7 @@
 .profile-info button {
   border-radius: 20px;
   background-color: #cbe896;
-  font-family: Arial, sans-serif; /* Change this to your preferred font */
+  /* font-family: 'Avro', Arial, sans-serif;  */
   padding: 10px 10px;
   border: none;
   cursor: pointer;

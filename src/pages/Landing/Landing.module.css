@@ -25,7 +25,6 @@
   border-radius: 10px;
   background-color: #452b21;
   color: #fff;
-  /* border: 1px solid #efd9c4ea; */
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.502);
   font-size: 1.2em;
   cursor: pointer;
@@ -33,5 +32,5 @@
 }
 
 .button:hover, .button:focus {
-  box-shadow: 0 0 15px 5px rgba(236, 132, 28, 0.6); /* Glowing effect */
+  box-shadow: 0 0 15px 5px rgba(236, 132, 28, 0.6);
 }

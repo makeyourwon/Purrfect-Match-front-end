@@ -59,7 +59,7 @@ input[type="email"] {
 }
 
 .button:disabled {
-  background-color: #BEB7A4;
+  background-color: #452b21;
   cursor: default;
 }
 
