@@ -34,13 +34,13 @@
 }
 /* GPT ASSITANCE */
 #pages .active {
-  background-color: #00ffae;
+  background-color: #c7d1b5;
   color: white;
 }
 
 
 button {
-  background-color: #007bff; /* Blue */
+  background-color: #cbe896; /* Blue */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3; /* Darker blue */
+  background-color: #758654; /* Darker blue */
   transform: scale(1.05);
 }
 
