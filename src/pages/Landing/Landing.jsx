@@ -6,12 +6,12 @@ const Landing = ({ user }) => {
 
   const navigate = useNavigate();
   const navigateToSignUp = () => {
-    navigate('/signup'); // Replace '/signup' with your actual Sign Up route
+    navigate('/signup'); 
   };
 
   // Function to navigate to the Log In page
   const navigateToLogIn = () => {
-    navigate('/login'); // Replace '/login' with your actual Log In route
+    navigate('/login'); 
   };
 
   return (

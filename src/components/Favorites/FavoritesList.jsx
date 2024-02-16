@@ -22,15 +22,7 @@ const FavoritesList = () => {
 
 
   return (
-    // <>
-    //   <div className="card-container">
-    //     {favorites.map((favorite) => (
-    //       <div key={favorite.id} className="animal-card">
-    //         <AnimalCard animal={favorite} />
-    //       </div>
-    //     ))}
-    //   </div>
-    // </>
+   
     <>
       <div className="card-container">
         {favorites && favorites.length > 0 ?(
