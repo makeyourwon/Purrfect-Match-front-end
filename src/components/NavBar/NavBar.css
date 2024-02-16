@@ -29,7 +29,21 @@ nav {
   color: #fffffC;
   /* font-family:'Avro', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif */
 }
+@media screen and (max-width: 768px) {
+  .nav-links {
+      padding: 0 20px; /* Reduce padding on smaller screens */
+      width: 100%; /* Adjust width to be full width on smaller screens */
+      flex-wrap: wrap; /* Allow items to wrap if space is limited */
+  }
+}
 
+/* Adjust for mobile devices */
+@media screen and (max-width: 480px) {
+  .nav-links {
+      flex-direction: column; /* Stack the items vertically */
+      padding: 0 10px; /* Further reduce padding */
+  }
+}
 .nav-link.active {
   color: #ff7f11;
 }
