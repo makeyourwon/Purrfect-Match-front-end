@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import favoriteService from '../../services/favoriteService';
 import '../AnimalCard/AnimalCard.css'
 
@@ -7,16 +7,13 @@ import '../AnimalCard/AnimalCard.css'
 const AnimalCard = ({ animal }) => {
   const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false)
-
-  console.log(animal)
   const displayImage = animal.photo_url.photo.length > 0 ? animal.photo_url.photo[0].medium : null;
 
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const favorites = await favoriteService.getFavorites(); // Fetch the list of favorites
-        // Assuming 'favorites' is an array of animal objects or IDs
-        const favoriteIds = favorites.map(fav => fav.id); // Adjust based on your data structure
+        const favorites = await favoriteService.getFavorites(); 
+        const favoriteIds = favorites.map(fav => fav.id);
         setIsFavorite(favoriteIds.includes(animal.id));
       } catch (error) {
         console.error('Failed to fetch favorites', error);
@@ -27,7 +24,6 @@ const AnimalCard = ({ animal }) => {
   }, [animal.id]);
 
   const toggleFavorite = async () => {
-    // Toggle favorite logic (add or remove), similar to previous examples
     if (isFavorite) {
       await favoriteService.removeFavorites(animal.id);
     } else {
@@ -41,34 +37,6 @@ const AnimalCard = ({ animal }) => {
   };
 
   return (
-    // Regular display
-    // <div className="animal-card">
-    //   {displayImage && <img src={displayImage} alt={`Photo of ${animal.name}`} />}
-    //   <h2>{animal.name}</h2>
-    //   <p>Age: {animal.age}</p>
-    //   <p>Location: {animal.location}</p>
-    // </div>
-
-    //Link Alt
-
-    // <Link to={`/animals/${animal.id}`} className="animal-card">
-    //   {displayImage && <img src={displayImage} alt={`Photo of ${animal.name}`} />}
-    //   <h2>{animal.name}</h2>
-    //   <p>Age: {animal.age}</p>
-    //   <p>Location: {animal.location}</p>
-    //   {/* Add more details as per your requirement */}
-    // </Link>
-
-    //Navigate
-    // <div className="animal-card" onClick={handleClick}>
-    //   {displayImage && <img src={displayImage} alt={`Photo of ${animal.name}`} />}
-    //   <h2>{animal.name}</h2>
-    //   <p>Age: {animal.age}</p>
-    //   <p>Location: {animal.location}</p>
-    //   {/* Add more details as per your requirement */}
-    // </div>
-
-    //Favorite Button
     <div className="animal-card" onClick={() => navigate(`/animals/${animal.id}`)}>
       {displayImage && <img src={displayImage} alt={animal.name} />}
       <div className="animal-info">
@@ -76,7 +44,7 @@ const AnimalCard = ({ animal }) => {
         <h2>{animal.age} | {animal.gender} </h2>
       </div>
       <button id="heartButton" onClick={(e) => {
-        e.stopPropagation(); // Prevent navigation
+        e.stopPropagation();
         toggleFavorite();
       }}
         className={isFavorite ? 'favorite' : 'not-favorite'}
@@ -84,8 +52,6 @@ const AnimalCard = ({ animal }) => {
         {isFavorite ? '❤️' : '♡'}
       </button>
     </div>
-
-
   )
 }
 
